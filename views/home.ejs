@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/website.css">
+    <title>Solve Money</title>
+</head>
+
+<body>
+    
+    <%- include ('partials/navbar') %>
+
+    <section id="title">
+        <div class="heading">
+            <div class="title-text-set">
+                <h1>
+                    Flexible, pay as you grow loans
+                </h1>
+                <p>With Solve money, we fix the cost of your loan up-front and loan repayments are a
+                    fixed percentage of your weekly sales. Say goodbye to repayment worries and hello to a new, powerful
+                    way to grow your business.</p>
+
+            </div>
+            <a href="/register">
+                <div class="web-primary-button">
+                    <span>Get Started</span>
+                </div>
+            </a>
+        </div>
+        <div class="title-image-set">
+            <img src="images/title image 1.png" alt="" class="title-image-set">
+            <div class="title-image-subset">
+                <img src="images/title image 2.png" alt="" class="title-image-subset">
+                <img src="images/title image 3.png" alt="" class="title-image-subset">
+            </div>
+        </div>
+    </section>
+    <section id="features">
+        <div class="heading">
+            <h2>
+                Specially designed for your business
+            </h2>
+            <p>Access more funds and more flexibility as your business grows</p>
+        </div>
+        <div class="features-list">
+            <div class="feature-item">
+                <img src="images/flexible-icon.svg" alt="">
+                <div class="feature-item-description">
+                    <h4>Flexible repayments</h4>
+                    <p>If revenue slow so do your repayments</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <img src="images/quick-icon.svg" alt="">
+                <div class="feature-item-description">
+                    <h4>Quick funding</h4>
+                    <p>Get funded within a few business days</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <img src="images/low-cost-icon.svg" alt="">
+                <div class="feature-item-description">
+                    <h4>Low cost loans</h4>
+                    <p>No personal guarantee or collateral </p>
+                </div>
+            </div>
+        </div>
+    </section>
+<%- include ('partials/footer') %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="scripts/website.js"></script>
+</body>
+
+</html>

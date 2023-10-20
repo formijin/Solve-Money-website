@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bb945b4696.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/authentication.css">
+    <title>Solve | Register | Personal </title>
+</head>
+
+<body>
+    <h1 id="title">
+        Solve<span>.</span>Money
+    </h1>
+    <form action="/register" method="post">
+        <div class="form-card" id="page-1">
+            <a href="/" class="back-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </a>
+            <p>👋 Welcome,</p>
+            <h2>Start Your Onboarding</h2>
+            <img src="images/signup-1-welcome.svg" alt="">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit
+                ornare egestas arcu placerat. Maecenas aenean egestas cras a, vitae. Potenti sit convallis augue
+                laoreet phasellus odio pharetra, mi mi.
+            </p>
+
+            <div class="main-btn next-btn">
+                Proceed
+            </div>
+
+        </div>
+        <div class="form-card" id="page-2">
+            <a href="/" class="back-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </a>
+            <p>👋 Welcome,</p>
+            <h2>Personal Information</h2>
+            <p>
+                Provide all personal information that allows us know you better.
+                It is important that the information provided matches any Government ID that would be used.
+            </p>
+            <div class="horizontal-inputs-2">
+
+                <div class="input-container">
+                    <label for="fName">
+                        <i class="fa-solid fa-user fa-sm" style="color: #c7c3c3;"></i>
+                    </label>
+                    <input type="text" name="fName" id="" placeholder="First Name">
+                </div>
+                <div class="input-container">
+                    <label for="lName">
+                        <i class="fa-solid fa-user fa-xs" style="color: #c7c3c3;"></i>
+                    </label>
+                    <input type="text" name="lName" id="" placeholder="Family Name">
+                </div>
+
+            </div>
+            <div class="input-container">
+                <label for="email">
+                    <i class="fa-solid fa-envelope" style="color: #c7c3c3;"></i>
+                </label>
+                <input type="email" name="email" id="" placeholder="Email">
+
+            </div>
+            <div class="input-container">
+                <label for="tel">
+                    <i class="fa-solid fa-phone" style="color: #c7c3c3;"></i>
+                </label>
+                <input type="tel" name="tel" id="" placeholder="Phone Number">
+            </div>
+            <div class="input-checkbox-container">
+                <input type="checkbox" name="business owner" id="bo">
+                <label for="bo">I confirm that I am an owner of the business</label>
+            </div>
+            <button type="submit" class="main-btn">Submit</button>
+
+
+        </div>
+    </form>
+
+
+    <p class="alternative">Already have an account? <a href="/login">Sign In</a></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="scripts/auth-script.js"></script>
+
+</body>
+
+</html>
