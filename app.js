@@ -14,6 +14,7 @@ import passprtLocalMongoose from "passport-local-mongoose";
 
 //------------------    model imports
 import User from './models/user.js';
+import TempUser from "./models/temp-user.js";
 
 
 //------------------    route imports
@@ -65,29 +66,35 @@ app.get('/', (req, res) => {
 //------------------    register route
 app.route('/register')
     .get(async (req, res) => {
-        res.render(`register-1`);
+        res.render('register-1');
     })
     .post(async (req, res) => {
-
         try {
-            const user = new User({
+            const tempUser = new TempUser({
                 firstName: req.body.fName,
                 lastName: req.body.lName,
                 email: req.body.email,
                 phoneNumber: {
                     countryCode: req.body.countryCode,
-                    number: req.body.tel
+                    number: req.body.tel,
+                    msisdn: `${req.body.contryCode}${req.body.tel}`
                 },
-                creationDate: new Date()
             });
-            const result = await user.save();
-            console.log(`new user created ${result._id}`);
-            res.render(`register-2`, { user: result });
+            const result = await tempUser.save();
+            res.render('register-2', { user: result });
         } catch (error) {
-            console.error(error);
-        res.status(500).send('Registration failed. Please try again later.');
+            console.error('Error during registration:', error);
+
+            // Check for duplicate key error (code 11000 in MongoDB)
+            if (error.code === 11000) {
+                return res.status(400).send('Email or phone number already registered.');
+            }
+
+            // For other types of errors, send a generic message
+            res.status(500).send('Registration failed. Please try again later.');
         }
     });
+
 
 
 app.listen(port || 3000, () => {

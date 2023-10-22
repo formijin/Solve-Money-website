@@ -118,6 +118,16 @@ form{
     border: 1px solid var(--Gray-stroke, #E9E9E9);
     background: var(--White, #FFF);
 }
+.input-container select {
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+    border-right: 1px solid v #E9E9E9;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
 
 input {
     /* min-width: 8px; */
@@ -126,8 +136,19 @@ input {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    /* 171.429% */
+    width: 100%;
+    min-width: 200px;
 }
+input[type =checkbox]{
+    
+width: unset;
+min-width: unset;
+}
+input[type =checkbox]:invalid{
+    outline: #FB60E7 ;
+    width: unset;
+    min-width: unset;
+    }
 
 input:focus {
     outline: none;
@@ -144,5 +165,16 @@ input:focus {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+
+.input-container .error,
+.input-checkbox-container .error {
+	display: none;
+	/* position: absolute; */
+}
+
+.input-container input:invalid:not(:focus):not(:placeholder-shown) ~ .error,
+.input-checkbox-container input [type=check]:invalid:not(:focus) ~ .error {
+	display: block;
 }
 

@@ -10,6 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/bb945b4696.js" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="stylesheet" href="styles/authentication.css">
     <title>Solve | Register | Personal </title>
 </head>
@@ -18,7 +19,9 @@
     <h1 id="title">
         Solve<span>.</span>Money
     </h1>
-    <form action="/register" method="post">
+    <!-- form section with 2 pages -->
+    <form action="/register" method="post" id="register-1" novalidate>
+        <!-- Page 1 -->
         <div class="form-card" id="page-1">
             <a href="/" class="back-btn">
                 <i class="fa-solid fa-xmark"></i>
@@ -37,6 +40,7 @@
             </div>
 
         </div>
+        <!-- page 2 -->
         <div class="form-card" id="page-2">
             <a href="/" class="back-btn">
                 <i class="fa-solid fa-xmark"></i>
@@ -50,35 +54,39 @@
             <div class="horizontal-inputs-2">
 
                 <div class="input-container">
-                    <label for="fName">
-                        <i class="fa-solid fa-user fa-sm" style="color: #c7c3c3;"></i>
-                    </label>
-                    <input type="text" name="fName" id="" placeholder="First Name">
+                    <i class="fa-solid fa-user fa-sm" style="color: #c7c3c3;"></i>
+                    <input type="text" name="fName" id="" placeholder="First Name" required pattern="^[A-Za-z-]+$">
+                    <i class="fa-solid fa-circle-info error" style="color: #FB60E7;"></i>
                 </div>
                 <div class="input-container">
-                    <label for="lName">
-                        <i class="fa-solid fa-user fa-xs" style="color: #c7c3c3;"></i>
-                    </label>
-                    <input type="text" name="lName" id="" placeholder="Family Name">
+                    <i class="fa-solid fa-user fa-xs" style="color: #c7c3c3;"></i>
+                    <input type="text" name="lName" id="" placeholder="Family Name" pattern="^[A-Za-z-]+$" required>
+                    <i class="fa-solid fa-circle-info error" style="color: #FB60E7;"></i>
                 </div>
 
             </div>
             <div class="input-container">
-                <label for="email">
-                    <i class="fa-solid fa-envelope" style="color: #c7c3c3;"></i>
-                </label>
-                <input type="email" name="email" id="" placeholder="Email">
+                <i class="fa-solid fa-envelope " style="color: #c7c3c3;"></i>
+                <input type="email" name="email" id="" placeholder="Email" required>
+                <i class="fa-solid fa-circle-info error" style="color: #FB60E7;"></i>
 
             </div>
             <div class="input-container">
-                <label for="tel">
-                    <i class="fa-solid fa-phone" style="color: #c7c3c3;"></i>
-                </label>
-                <input type="tel" name="tel" id="" placeholder="Phone Number">
+
+                <!-- <i class="fa-solid fa-phone" style="color: #c7c3c3;"></i> -->
+                <select name="countryCode" id="lang" >
+                    <option value="234" selected>+234</option>
+                    <option value="233">+233</option>
+
+                </select>
+                <input type="tel" name="tel" id="" placeholder="Phone Number" maxlength="10"
+                    pattern="^(70|80|81|90|91)[0-9]{8}$" required>
+                <i class="fa-solid fa-circle-info error" style="color: #FB60E7;"></i>
             </div>
             <div class="input-checkbox-container">
-                <input type="checkbox" name="business owner" id="bo">
+                <input type="checkbox" name="business owner" id="bo" required>
                 <label for="bo">I confirm that I am an owner of the business</label>
+                <i class="fa-solid fa-circle-info fa-xs error" style="color: #FB60E7;"></i>
             </div>
             <button type="submit" class="main-btn">Submit</button>
 

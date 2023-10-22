@@ -5,7 +5,7 @@ import passportLocalMongoose from "passport-local-mongoose";
 const userSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
-    email: String,
+    username: String,
     phoneNumber: {
         countryCode: String,
         number: String
