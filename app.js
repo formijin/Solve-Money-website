@@ -77,7 +77,7 @@ app.route('/register')
                 phoneNumber: {
                     countryCode: req.body.countryCode,
                     number: req.body.tel,
-                    msisdn: `${req.body.contryCode}${req.body.tel}`
+                    msisdn: `${req.body.countryCode}${req.body.tel}`
                 },
             });
             const result = await tempUser.save();
@@ -95,7 +95,10 @@ app.route('/register')
         }
     });
 
-
+app.route('/login')
+    .get(async (req, res) => {
+        res.render('login');
+    })
 
 app.listen(port || 3000, () => {
     console.log(`Server started on port`);
