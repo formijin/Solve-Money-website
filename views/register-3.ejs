@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bb945b4696.js" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="/styles/authentication.css">
+    <title>Solve | Register | Password </title>
+</head>
+<body>
+    <h1 id="title">
+        Solve<span>.</span>Money
+    </h1>
+
+    <form action="/password/<%= user._id %>" method="post" id="password" novalidate>
+        <div class="form-card" id="page-1">
+            <p>👋 Welcome,</p>
+            <h2>Personal Information</h2>
+            <p>
+                Please provide a unique password to be used to access your account in the future.
+            </p>
+            <div class="input-container">
+                <i class="fa-solid fa-key" style="color: #c7c3c3;"></i>
+                <input type="password" name="password1" id="password1" placeholder="Password " 
+                 title="Password must be at least 8 characters, contain one uppercase character, and one special character." required>
+                <i class="fa-solid fa-circle-info error" style="color: #FB60E7;"></i>
+
+            </div>
+            <div class="input-container">
+                <i class="fa-solid fa-key" style="color: #c7c3c3;"></i>
+                <input type="password" name="password2" id="password2" placeholder="Confirm Password" required>
+                <i class="fa-solid fa-circle-info error" style="color: #FB60E7;"></i>
+
+            </div>
+            <ul class="rules">
+                <li class="matchingRule">Both passwords must match</li>
+                <li class="otherRules">The password must be over 8 digits long</li>
+                <li class="otherRules">Password should contain a special character and one upper case character.</li>
+                <li>pattern="^(?=.*[A-Z])(?=.*[\W_]).{8,}$"</li>
+            </ul>
+            <div class="input-checkbox-container">
+                <input type="checkbox" name="TandCVersion" id="tandC" value=<%= tcVersion %> required>
+                <label for="tandC">I agree to the terms of the Privacy policy of Solve Money</label>
+                <i class="fa-solid fa-circle-info fa-xs error" style="color: #FB60E7;"></i>
+            </div>
+
+            <button type="submit" class="main-btn">Submit</button>
+
+
+        </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/scripts/auth-script.js"></script>
+</body>
+</html>

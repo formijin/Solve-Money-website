@@ -3,16 +3,35 @@ import passportLocalMongoose from "passport-local-mongoose";
 
 
 const userSchema = new mongoose.Schema({
-    firstName: String,
-    lastName: String,
-    username: String,
+    firstName: {
+        type: String,
+        required: true,
+    },
+    lastName: {
+        type: String,
+        required: true,
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
     phoneNumber: {
         countryCode: String,
-        number: String
+        number: String,
+        msisdn: {
+            type: String,
+            unique: true
+        }
     },
-    creationDate: Date
+    tcVersion: String
+},{
+    timestamps: true,
+    autoIndex: true
 });
 
-userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(passportLocalMongoose, {
+    usernameField: "email"
+});
 
 export default mongoose.model('User', userSchema);

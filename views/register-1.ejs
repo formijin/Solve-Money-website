@@ -19,6 +19,11 @@
     <h1 id="title">
         Solve<span>.</span>Money
     </h1>
+    <% if (locals.error) { %>
+        <div class="error-message">
+          <%= error %>
+        </div>
+      <% } %>
     <!-- form section with 2 pages -->
     <form action="/register" method="post" id="register-1" novalidate>
         <!-- Page 1 -->

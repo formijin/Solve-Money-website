@@ -1,13 +1,29 @@
 body {
     font-family: 'Poppins', sans-serif;
-    width: 100vw;
-    margin:0 ;
+    /* width: 100vw; */
+    margin: 0;
     background-color: #060809;
     background-image: url("/images/background.png");
-    background-size:cover;
-    background-attachment:fixed; /* Add this line to fix the background */
+    background-size: cover;
+    background-attachment: fixed;
+    /* Add this line to fix the background */
 }
 
+h2 {
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}
+
+p {
+    /* typography */
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
 
 nav {
     display: flex;
@@ -28,10 +44,11 @@ nav.sticky {
     width: 100%;
     background: #060809;
     z-index: 1000;
-  }
+}
+
 nav a {
     text-decoration: none;
-    color:  #FFF;
+    color: #FFF;
 }
 
 
@@ -84,7 +101,7 @@ nav a {
     background: #9100CB;
 
     /* typography */
-    color:#FFF;
+    color: #FFF;
     font-family: 'Poppins', sans-serif;
     ;
     font-size: 1rem;
@@ -111,8 +128,8 @@ section {
     /* align-self: stretch; */
 
     /* background image */
-    
-    
+
+
 }
 
 
@@ -125,7 +142,7 @@ section {
     min-width: 35rem;
 }
 
-.title-text-set {
+.text-set {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -149,13 +166,10 @@ section {
 #title p {
     align-self: stretch;
     margin: 0;
-
-    /* typography */
     color: rgba(255, 255, 255, 0.80);
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.5rem;
+
+
+
 }
 
 .title-image-set {
@@ -204,15 +218,8 @@ img.title-image-subset {
 }
 
 #features .heading h2 {
-    color:  #071827;
+    color: #071827;
     text-align: center;
-
-    /* h2 */
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin: 0;
 }
 
 #features .heading p {
@@ -269,7 +276,7 @@ img.title-image-subset {
 }
 
 .feature-item-description h4 {
-    color:  #071827;
+    color: #071827;
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 500;
@@ -317,23 +324,24 @@ footer>img {
     line-height: normal;
 }
 
-.contact{
+.contact {
     display: flex;
-flex-direction: column;
-align-items: flex-start;
-gap: 8px;
-}
-.contact-item{
-    display: flex;
-align-items: flex-start;
-gap: 12px;
-
-
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
 }
 
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
 
-.contact-item p{
-    color:  #FFF;
+
+}
+
+
+.contact-item p {
+    color: #FFF;
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
@@ -341,13 +349,13 @@ gap: 12px;
     margin: 0;
 }
 
-.socials{
+.socials {
     display: flex;
-align-items: flex-start;
-gap: 8px;
+    align-items: flex-start;
+    gap: 8px;
 }
 
-.social-link{
+.social-link {
     display: flex;
     width: 40px;
     height: 40px;
@@ -355,5 +363,183 @@ gap: 8px;
     align-items: center;
     gap: 10px;
     border-radius: 4px;
-    background:  rgba(90, 165, 254, 0.10);
+    background: rgba(90, 165, 254, 0.10);
+}
+
+#calculator {
+    display: flex;
+    padding: 96px 112px;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    align-self: stretch;
+    flex-wrap: wrap;
+    background: url("/images/background-2.png");
+    background-size: cover;
+    background-attachment: fixed;
+    /* Add this line to fix the background */
+}
+
+#calculator .heading {
+    display: flex;
+    width: 658px;
+    min-width: 350px;
+    max-width: 658px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+
+
+    /* box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25); */
+    text-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.calculator .heading .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.calculator-inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.calculator-inputs fieldset {
+
+    border: none;
+    padding: 0;
+}
+
+.loan-amount{
+    display: flex;
+    border: none;
+    border-bottom: 1px solid #000;
+    margin-top: 8px;
+    padding-top: 8px;
+
+
+}
+
+
+
+.calculator-inputs input {
+    border: none;
+    background: none;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    
+}
+
+.calculator-inputs label {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-family: 'Poppins', sans-serif;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+.loan-term {
+    margin-top: 8px;
+    border: none;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border-radius: 72px;
+    background: #F7EDF5
+}
+
+.chips.active {
+
+    background: #FFF;
+    color: #000;
+}
+
+.chips {
+    display: flex;
+    padding: 16px;
+    align-items: flex-start;
+    border: none;
+    border-radius: 58px;
+    background: none;
+
+    color: #5C6F7F;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    /* 150% */
+    cursor: pointer;
+}
+
+.calculator {
+    display: flex;
+    width: 403px;
+    flex-direction: column;
+    align-items: center;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.calculator .title {
+    display: flex;
+    padding: 20px 32px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+
+    border-radius: 4px;
+background: var(--neutral-50, #F6F9FB);
+}
+.calculator .title p{
+
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+}
+.calculator .term-details{
+    display: flex;
+    padding: 32px 32px;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: stretch;
+
+
+}
+
+.calculator .line-item{
+    display: flex;
+    padding: 20px 0px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+
+border-bottom: 1px solid #E2E9F0;
+}
+
+.calc-key{
+    color: #5C6F7F;
+}
+.calc-value{
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+
 }
