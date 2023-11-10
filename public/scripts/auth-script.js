@@ -30,5 +30,38 @@ $("#register-1").submit(function (event) {
         // alert("There are invalid inputs!");
         event.preventDefault(); // Prevent form from submitting
     }
-    
+
 });
+
+
+
+$('.otp-input').each(function (index, input) {
+    $(input).on('input', function () {
+        if ($(this).val()) {
+            if (index < $('.otp-input').length - 1) {
+                $('.otp-input').eq(index + 1).focus();
+            }
+        } else if (index > 0) {
+            $('.otp-input').eq(index - 1).focus();
+        }
+    });
+});
+
+
+// $('#password2').on('blur', function() {
+//     const password1Value = $('#password1').val();
+//     const password2Value = $(this).val();
+//     const password1IsValid = $('#password1')[0].checkValidity();
+//     const password2IsValid = $('#password2')[0].checkValidity();
+    
+//     // Reset rule colors to default first
+//     $(".matchingRule, .otherRules").css('color', ''); 
+
+//     if (password1Value !== password2Value) {
+//         $(".matchingRule").css('color', 'red');
+//     } 
+    
+//     if (!password1IsValid || !password2IsValid) {
+//         $(".otherRules").css('color', 'red');
+//     }
+// });
