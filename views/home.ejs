@@ -101,9 +101,9 @@
                     <fieldset>
                         <legend>Loan term</legend>
                         <div class="loan-term">
-                            <button class="chips active" onclick="selectChip(this)">3 months</button>
-                            <button class="chips" onclick="selectChip(this)">6 months</button>
-                            <button class="chips" onclick="selectChip(this)">12 months</button>
+                            <button class="chips active" onclick="selectChip(this)" id ="3" >3 months</button>
+                            <button class="chips" onclick="selectChip(this)" id="6">6 months</button>
+                            <button class="chips" onclick="selectChip(this)"id="12">12 months</button>
                         </div>
 
                     </fieldset>
@@ -117,15 +117,15 @@
                 <div class="term-details">
                     <div class="line-item">
                         <p>Your Offer</p>
-                        <h4>$10,000,000</h4>
+                        <h4 id="principle">$10,000,000</h4>
                     </div>
                     <div class="line-item">
                         <p>FLat Fee</p>
-                        <h4>5%</h4>
+                        <h4 id="rate">5%</h4>
                     </div>
                     <div class="line-item">
                         <p>Total Repayable</p>
-                        <h4>$10,500,000</h4>
+                        <h4 id="totalPayment">$10,500,000</h4>
                     </div>
                     <div class="button-area">
                         <a href="/register" class="pry-btn-1">
