@@ -48,7 +48,7 @@ function calculateLoanTerm() {
   const totalPayment = (rate * principle * tenure) + principle;
   console.log(totalPayment);
 
-  $('#principle').text('$' + principle.toLocaleString('en-US'));
+  $('#principle').text('₦ ' + principle.toLocaleString('en-US'));
   $('#rate').text((rate*100)+'%');
-  $('#totalPayment').text('$'+ totalPayment.toLocaleString('en-US'));
+  $('#totalPayment').text('₦ '+ totalPayment.toLocaleString('en-US'));
 }
