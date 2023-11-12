@@ -17,6 +17,8 @@ h2 {
     margin: 0;
 }
 
+
+
 p {
     opacity: 0.5;
     font-size: 16px;
@@ -25,7 +27,8 @@ p {
     line-height: normal;
     margin: 0;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
@@ -42,7 +45,7 @@ nav {
 }
 
 h4 {
-    color: #071827;
+
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -228,7 +231,7 @@ img.title-image-subset {
     justify-content: center;
     align-items: center;
     align-content: center;
-    gap: 32px;
+    gap: 60px;
     flex-wrap: wrap;
 }
 
@@ -257,7 +260,8 @@ footer {
     flex-wrap: wrap;
     background: #060809;
 }
-footer a{
+
+footer a {
     color: white;
 }
 
@@ -469,9 +473,11 @@ input:focus {
     flex: 1 0 0;
     align-self: stretch;
 }
-.button-area a{
+
+.button-area a {
     align-self: stretch;
 }
+
 #animation {
     flex-direction: row;
     justify-content: space-between;
@@ -482,11 +488,39 @@ input:focus {
     flex-wrap: wrap;
 
     color: #FFF;
-    
+
     background: #060809;
 }
 
 #animation .heading {
     width: 40%;
     min-width: 560px;
+}
+
+#ideal-customer {
+    display: flex;
+    padding: 96px 120px;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    align-self: stretch;
+    text-align: center;
+    background: #000;
+    color: white;
+}
+
+.customer-feature {
+    display: flex;
+    width: 340px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    padding: 0;
+}
+
+#ideal-customer p{
+font-size: 24px;
+
 }
