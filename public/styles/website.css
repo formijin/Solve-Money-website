@@ -489,7 +489,7 @@ input:focus {
 
     color: #FFF;
 
-    background: #060809;
+    background: black;
 }
 
 #animation .heading {
@@ -505,7 +505,7 @@ input:focus {
     gap: 28px;
     align-self: stretch;
     text-align: center;
-    background: #000;
+    background: black;
     color: white;
 }
 
@@ -520,7 +520,13 @@ input:focus {
     padding: 0;
 }
 
-#ideal-customer p{
-font-size: 24px;
+
+#closing{
+    display: flex;
+padding: 96px 120px;
+justify-content: space-between;
+align-items: flex-start;
+align-self: stretch;
+color: var(--White, #FFF);
 
 }
