@@ -121,28 +121,13 @@ app.route('/password/:_id')
         });
     })
     .post(async (req, res) => {
-
+console.log(req.body);
         try {
-            console.log(`fetching started  for user id${req.params._id}`);
-            const tempUserData = await TempUser.findById(req.params._id).select('-_id');
-            console.log(`fetched started  for user id${req.params._id}`);
-            console.log(tempUserData);
-
-
-            const user = new User({
-                firstName: tempUserData.firstName,
-                lastName: tempUserData.lastName,
-                email: tempUserData.email,
-                phoneNumber: tempUserData.phoneNumber,
-                tcVersion: req.body.TandCVersion
+            const result = await axios.post('http://localhost:3001/register/password',{
+                "_id":req.params._id,
+                "password":req.body.password1
             });
-            console.log('saved model');
-            await user.setPassword(req.body.password1);
-            console.log('set password');
-            await user.save();
-            console.log('saved user');
-            const loggedInUser = await User.authenticate()('user', 'password')
-            res.redirect('/dashboard');
+            res.status(201).json(result.data)
 
         } catch (error) {
             console.error('Error during registration:', error);
