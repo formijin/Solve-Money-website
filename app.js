@@ -44,7 +44,7 @@ app.route('/register')
             });
             const tempUserValue = JSON.stringify(result.data);
             console.log(tempUserValue);
-            res.cookie('tempUser', tempUserValue).render('register-2',{ user: result.data });
+            res.render('register-2', { user: result.data });
         } catch (error) {
             if (error.response) {
                 // The request was made, but the server responded with a non-2xx status code
@@ -87,7 +87,7 @@ app.route('/validate-otp/:_id')
                 }
             );
 
-            res.render('register-3', { user: result.data.tempUser, tcVersion:'v1.0'});
+            res.render('register-3', { user: result.data.tempUser, tcVersion: 'v1.0' });
         } catch (error) {
             if (error.response) {
                 // The request was made, but the server responded with a non-2xx status code
@@ -123,26 +123,16 @@ app.route('/password/:_id')
     .post(async (req, res) => {
 
         try {
-            console.log(`fetching started  for user id${req.params._id}`);
-            const tempUserData = await TempUser.findById(req.params._id).select('-_id');
-            console.log(`fetched started  for user id${req.params._id}`);
-            console.log(tempUserData);
-
-
-            const user = new User({
-                firstName: tempUserData.firstName,
-                lastName: tempUserData.lastName,
-                email: tempUserData.email,
-                phoneNumber: tempUserData.phoneNumber,
-                tcVersion: req.body.TandCVersion
-            });
-            console.log('saved model');
-            await user.setPassword(req.body.password1);
-            console.log('set password');
-            await user.save();
-            console.log('saved user');
-            const loggedInUser = await User.authenticate()('user', 'password')
-            res.redirect('/dashboard');
+            const result = await axios.post(
+               'http://localhost:3001/register/password',
+                {
+                    _id: req.params._id,
+                    password: req.body.password
+                }
+            )
+            console.log(result.data);
+            const accessToken =result.data.token
+            res.cookie('token', accessToken, { httpOnly: true, secure: false }).render('user-reg-sucess');
 
         } catch (error) {
             console.error('Error during registration:', error);
@@ -151,7 +141,7 @@ app.route('/password/:_id')
         }
     });
 
-    
+
 app.route('/dashboard')
     .get((req, res) => {
         res.render('dashboard');
@@ -167,23 +157,6 @@ app.route('/dashboard')
 //     }));
 
 
-
-async function generateOTP(userId, purposeValue) {
-    try {
-        const otpValue = (Math.floor(Math.random() * 1000000) + '').padStart(6, '0');
-        const otp = new OTP({
-            purpose: purposeValue,
-            user: userId,
-            otp: otpValue,
-            verified: false
-        });
-        const result = await otp.save();
-        return result;
-    } catch (error) {
-        console.error("Error generating OTP:", error);
-        throw error;
-    }
-};
 
 
 app.listen(port || 3000, () => {
