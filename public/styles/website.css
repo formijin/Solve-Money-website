@@ -1,3 +1,10 @@
+html, body {
+    height: 100%; /* Make html and body take up the full height of the screen */
+    width: 100%; /* Make html and body take up the full width of the screen */
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+  }
+
 body {
     font-family: 'Poppins', sans-serif;
     /* width: 100vw; */
@@ -220,7 +227,7 @@ img.title-image-subset {
     color: #000;
 }
 
-#features .heading {
+.heading-2 {
     align-items: center;
     gap: 4px;
     text-align: center;
@@ -323,7 +330,8 @@ footer>img {
     align-content: center;
     align-self: stretch;
     flex-wrap: wrap;
-    background: url("/images/background-2.png");
+    backdrop-filter: invert();
+    /* background: url("/images/background-2.png"); */
     background-size: cover;
     background-attachment: fixed;
     color: #000;
@@ -521,12 +529,41 @@ input:focus {
 }
 
 
-#closing{
+#closing {
     display: flex;
-padding: 96px 120px;
-justify-content: space-between;
-align-items: flex-start;
-align-self: stretch;
-color: var(--White, #FFF);
+    padding: 96px 120px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+    color: var(--White, #FFF);
 
+}
+
+#comparison {
+    display: flex;
+    padding: 96px 120px;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    align-self: stretch;
+
+    background: #FFF;
+    color: black
+}
+
+.blue-cell {
+    background: #F6F9FB;
+}
+table{
+    text-align: left;
+    vertical-align: middle;
+    width: 100%;
+    border-collapse: collapse;
+}
+tr{
+   
+    border-bottom: #E0E0E0 1px solid;
+}
+td,th{
+    padding: 16px;
 }

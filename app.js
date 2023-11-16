@@ -121,7 +121,7 @@ app.route('/password/:_id')
         });
     })
     .post(async (req, res) => {
-
+console.log(req.body);
         try {
             const result = await axios.post(
                'http://localhost:3001/register/password',
@@ -133,6 +133,7 @@ app.route('/password/:_id')
             console.log(result.data);
             const accessToken =result.data.token
             res.cookie('token', accessToken, { httpOnly: true, secure: false }).render('user-reg-sucess');
+
 
         } catch (error) {
             console.error('Error during registration:', error);
