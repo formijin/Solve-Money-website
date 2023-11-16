@@ -44,7 +44,7 @@ app.route('/register')
             });
             const tempUserValue = JSON.stringify(result.data);
             console.log(tempUserValue);
-            res.cookie('tempUser', tempUserValue).render('register-2',{ user: result.data });
+            res.render('register-2', { user: result.data });
         } catch (error) {
             if (error.response) {
                 // The request was made, but the server responded with a non-2xx status code
@@ -87,7 +87,7 @@ app.route('/validate-otp/:_id')
                 }
             );
 
-            res.render('register-3', { user: result.data.tempUser, tcVersion:'v1.0'});
+            res.render('register-3', { user: result.data.tempUser, tcVersion: 'v1.0' });
         } catch (error) {
             if (error.response) {
                 // The request was made, but the server responded with a non-2xx status code
@@ -123,11 +123,17 @@ app.route('/password/:_id')
     .post(async (req, res) => {
 console.log(req.body);
         try {
-            const result = await axios.post('http://localhost:3001/register/password',{
-                "_id":req.params._id,
-                "password":req.body.password1
-            });
-            res.status(201).json(result.data)
+            const result = await axios.post(
+               'http://localhost:3001/register/password',
+                {
+                    _id: req.params._id,
+                    password: req.body.password
+                }
+            )
+            console.log(result.data);
+            const accessToken =result.data.token
+            res.cookie('token', accessToken, { httpOnly: true, secure: false }).render('user-reg-sucess');
+
 
         } catch (error) {
             console.error('Error during registration:', error);
@@ -136,7 +142,7 @@ console.log(req.body);
         }
     });
 
-    
+
 app.route('/dashboard')
     .get((req, res) => {
         res.render('dashboard');
@@ -152,23 +158,6 @@ app.route('/dashboard')
 //     }));
 
 
-
-async function generateOTP(userId, purposeValue) {
-    try {
-        const otpValue = (Math.floor(Math.random() * 1000000) + '').padStart(6, '0');
-        const otp = new OTP({
-            purpose: purposeValue,
-            user: userId,
-            otp: otpValue,
-            verified: false
-        });
-        const result = await otp.save();
-        return result;
-    } catch (error) {
-        console.error("Error generating OTP:", error);
-        throw error;
-    }
-};
 
 
 app.listen(port || 3000, () => {
