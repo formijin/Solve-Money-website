@@ -19,22 +19,22 @@
     <h1 id="title">
         Solve<span>.</span>Money
     </h1>
-    <% if (locals.error) { %>
+    <% if (locals.message) { %>
         <div class="error-message">
-          <%= error %>
+          <%= message %>
         </div>
       <% } %>
 
-    <form action="/validate-otp/<%= user._id %>" method="post" id="validate-otp" novalidate>
+    <form action="http://localhost:3000/register/validate-otp" method="post" id="validate-otp" novalidate>
         <!-- Page 1 -->
         <div class="form-card" id="page-1">
-            <a href="/" class="back-btn2">
-                <i class="fa-solid fa-arrow-left"></i>   Go Back
+            <a href="/register?change=true" class="back-btn2">
+                <i class="fa-solid fa-arrow-left"></i>   Change Number
             </a>
             <p>👋 Welcome,</p>
             <h2>Verify Phone Number</h2>
             <p>
-                Please provide the code sent to <em style="color:#FB60E7 ;"><%= user.phoneNumber.msisdn %></em> below
+                Please provide the code sent to <em style="color:#FB60E7 ;"><%= tempUser.phoneNumber.msisdn %></em> below
             </p>
             
                 <div class="otp-container">
@@ -58,7 +58,7 @@
     </form>
     <p class="alternative">Already have an account? <a href="/login">Sign In</a></p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="scripts/auth-script.js"></script>
+    <script src="scripts/register-2.js" type="text/javascript"></script>
 
 </body>
 

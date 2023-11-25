@@ -19,9 +19,9 @@
     <h1 id="title">
         Solve<span>.</span>Money
     </h1>
-    <% if (locals.error) { %>
+    <% if (locals.message) { %>
         <div class="error-message">
-          <%= error %>
+          <%= message %>
         </div>
       <% } %>
     <!-- form section with 2 pages -->
@@ -101,8 +101,12 @@
 
 
     <p class="alternative">Already have an account? <a href="/login">Sign In</a></p>
+    <script>
+        var tempUser = <%- locals.tempUser ? JSON.stringify(tempUser) : false %> ;
+        var message = '<%- locals.message ? message : false %>';
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="scripts/auth-script.js"></script>
+    <script src="scripts/register-1.js"></script>
 
 </body>
 
