@@ -1,42 +1,49 @@
-html, body {
-    height: 100%; /* Make html and body take up the full height of the screen */
-    width: 100%; /* Make html and body take up the full width of the screen */
-    margin: 0; /* Reset default margin */
-    padding: 0; /* Reset default padding */
-  }
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    /* Make html and body take up the full height of the screen */
+    width: 100%;
+    /* Make html and body take up the full width of the screen */
+}
 
 body {
     font-family: 'Poppins', sans-serif;
-    /* width: 100vw; */
-    margin: 0;
-    background-color: #060809;
     background-image: url("/images/background.png");
     background-size: cover;
-    background-attachment: fixed;
     /* Add this line to fix the background */
+    background-attachment: fixed;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 500;
 }
 
 h2 {
     font-size: 48px;
-    font-style: normal;
     font-weight: 500;
-    line-height: normal;
-    margin: 0;
 }
 
+h4 {
 
+    font-size: 20px;
+    font-weight: 500;
+}
 
 p {
     opacity: 0.5;
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
-    line-height: normal;
-    margin: 0;
 }
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 nav {
@@ -49,15 +56,7 @@ nav {
     width: 100%;
     z-index: 1000;
     transition: all 0.2s ease;
-}
-
-h4 {
-
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin: 0;
+    color: white;
 }
 
 nav.sticky {
@@ -69,13 +68,8 @@ nav.sticky {
     z-index: 1000;
 }
 
-nav a {
-    text-decoration: none;
-    color: #FFF;
-}
 
-
-.nav-core {
+.nav-set {
     display: flex;
     padding: 20px 40px;
     align-items: center;
@@ -90,7 +84,6 @@ nav a {
     /* typography */
     color: #FFF;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
     line-height: 1.5rem;
 
@@ -104,36 +97,24 @@ nav a {
     gap: 10px;
 }
 
-
-.nav-cta {
-    display: flex;
-    padding: 20px 40px;
-    align-items: flex-start;
-    gap: 16px;
-}
-
-
-
-
 .pry-btn-1 {
     display: flex;
     padding: 16px 32px;
     justify-content: center;
     align-items: center;
-    border-radius: 0.25rem;
+    border-radius: 4px;
     background: #9100CB;
 
     /* typography */
     color: #FFF;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
 }
 
 
 section {
     display: flex;
-    padding: 61px 120px;
+    padding: 96px 120px;
 }
 
 .heading {
@@ -141,6 +122,20 @@ section {
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
+}
+
+.heading-2 {
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+}
+
+.text-set {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
 }
 
 #title {
@@ -153,63 +148,34 @@ section {
     padding-top: 10%;
     color: #FFF;
 
-    /* width: 100vw; */
-    /* align-self: stretch; */
-
-    /* background image */
-
-
 }
-
 
 #title .heading {
     width: 40%;
     min-width: 560px;
 }
 
-.text-set {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    align-self: stretch;
-}
-
-#title h1 {
-    align-self: stretch;
-    margin: 0;
-
-    /* typography */
-    color: #FFF;
-    font-size: 4rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 4.25rem;
-    letter-spacing: -0.08rem;
-}
-
-.title-image-set {
+#title .image-set {
     display: flex;
     align-items: center;
     gap: 16px
 }
 
-.title-image-subset {
+.image-set>img {
+    width: 22rem;
+    height: 33.625rem;
+    flex-shrink: 0;
+    border-radius: 16px;
+}
+
+#title .image-subset {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1.125rem;
 }
 
-img.title-image-set {
-    width: 22rem;
-    height: 33.625rem;
-    flex-shrink: 0;
-    border-radius: 16px;
-
-}
-
-img.title-image-subset {
+.image-subset>img {
     width: 16.25rem;
     height: 16.25rem;
     flex-shrink: 0;
@@ -225,12 +191,6 @@ img.title-image-subset {
     gap: 4rem;
     background: #FFF;
     color: #000;
-}
-
-.heading-2 {
-    align-items: center;
-    gap: 4px;
-    text-align: center;
 }
 
 .features-list {
@@ -323,19 +283,15 @@ footer>img {
 }
 
 #calculator {
-    display: flex;
-    padding: 96px 112px;
     justify-content: space-between;
     align-items: center;
     align-content: center;
     align-self: stretch;
     flex-wrap: wrap;
     backdrop-filter: invert();
-    /* background: url("/images/background-2.png"); */
     background-size: cover;
     background-attachment: fixed;
     color: #000;
-    /* Add this line to fix the background */
 }
 
 #calculator .heading {
@@ -377,18 +333,14 @@ footer>img {
 
     font-family: 'Poppins', sans-serif;
     font-size: 32px;
-    font-style: normal;
     font-weight: 500;
-    line-height: normal;
 
 
 }
 
 .calculator-inputs label {
     font-size: 32px;
-    font-style: normal;
     font-weight: 500;
-    line-height: normal;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -427,7 +379,6 @@ input:focus {
 
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
     /* 150% */
     cursor: pointer;
@@ -530,13 +481,10 @@ input:focus {
 
 
 #closing {
-    display: flex;
-    padding: 96px 120px;
+    padding: 60px 120px;
     justify-content: space-between;
-    align-items: flex-start;
-    align-self: stretch;
-    color: var(--White, #FFF);
-
+    align-items: center;
+    color: white
 }
 
 #comparison {
@@ -554,16 +502,98 @@ input:focus {
 .blue-cell {
     background: #F6F9FB;
 }
-table{
+
+table {
     text-align: left;
     vertical-align: middle;
     width: 100%;
     border-collapse: collapse;
 }
-tr{
-   
+
+tr {
+
     border-bottom: #E0E0E0 1px solid;
 }
-td,th{
+
+td,
+th {
     padding: 16px;
+}
+
+#testimonial {
+    justify-content: center;
+    align-items: flex-start;
+    backdrop-filter: invert();
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+.carousel {
+    position: relative;
+
+
+}
+
+.carousel button {
+    background: #29383F;
+    padding: 12px;
+    position: absolute;
+}
+
+button.prev {
+    left: 8px;
+    bottom: 194px;
+}
+
+button.next {
+    right: 8px;
+    bottom: 194px;
+}
+
+
+
+.carousel-item {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex: 0 0 0;
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+
+.carousel-item.active {
+    display: flex;
+    
+}
+
+.carousel-item>img {
+    width: 600px;
+    height: 468px;
+}
+
+.carousel-item .body {
+    box-sizing: border-box;
+    display: flex;
+    width: 600px;
+    height: 468px;
+    padding: 60px 72px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    background: black;
+    text-align: center;
+}
+
+.carousel-item .body>img {
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    object-fit: cover;
+}
+
+p.sub-text {
+    font-size: 14px;
 }

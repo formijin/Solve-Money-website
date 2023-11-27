@@ -52,3 +52,35 @@ function calculateLoanTerm() {
   $('#rate').text((rate*100)+'%');
   $('#totalPayment').text('₦ '+ totalPayment.toLocaleString('en-US'));
 }
+
+
+// Carousel 
+document.querySelector('.prev').addEventListener('click', function() {
+  changeSlide(-1);
+});
+
+document.querySelector('.next').addEventListener('click', function() {
+  changeSlide(1);
+});
+
+let slideIndex = 0;
+showSlide(slideIndex);
+
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+function showSlide(n) {
+  let slides = document.querySelectorAll('.carousel-item');
+  if (n >= slides.length) {
+      slideIndex = 0;
+  } else if (n < 0) {
+      slideIndex = slides.length - 1;
+  }
+
+  for (let slide of slides) {
+      slide.style.display = 'none';
+  }
+  slides[slideIndex].style.display = 'flex';
+}
+
